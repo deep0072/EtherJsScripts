@@ -25,7 +25,6 @@ The code demonstrates the following functionality:
 - Formatting an Ethereum balance in ether using `ethers.formatEther()`
 - Parsing an Ethereum balance in ether to wei using `ethers.parseEther()`
 
-
 ## Example
 
 Here's an example of how to use this code:
@@ -64,10 +63,6 @@ if (vitalikBalancess > deepBalance) {
 let newDeepBalance = deepBalance.add(ethers.parseEther("50"));
 console.log(newDeepBalance.toString());
 ```
-
-## License
-
-This code is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 <br>
 
