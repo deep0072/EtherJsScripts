@@ -19,9 +19,7 @@ To create a provider in Ether.js, you can use the `JsonRpcProvider` class as fol
 ```javascript
 import { ethers } from "ethers";
 
-const provider = new ethers.providers.JsonRpcProvider(
-  "https://mainnet.infura.io/v3/YOUR-PROJECT-ID"
-);
+const provider = new ethers.JsonRpcProvider(url);
 ```
 
 Here, we are creating a new `JsonRpcProvider` object that connects to the Ethereum mainnet using the Infura service. You will need to replace `YOUR-PROJECT-ID` with your own Infura project ID.
