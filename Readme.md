@@ -74,8 +74,8 @@ This repository contains sample code snippets demonstrating how to create and ma
 
 The following code snippets are included in this repository:
 
-1. `create-wallet.js`: demonstrates how to create a new Ethereum wallet using `ethers.Wallet.createRandom()`.
-2. `create-multiple-wallets.js`: demonstrates how to create multiple Ethereum wallets using the same mnemonic key.
+1. ` ethers.Wallet.createRandom();`: demonstrates how to create a new Ethereum wallet using `ethers.Wallet.createRandom()`.
+2. `ethers.Wallet.fromMnemonic(wallet.mnemonic.phrase, path)`: demonstrates how to create multiple Ethereum wallets using the same mnemonic key.
 
 ## Usage
 
