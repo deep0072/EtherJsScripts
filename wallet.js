@@ -1,4 +1,5 @@
 import { ethers } from "ethers";
+import "dotenv/config";
 
 // create wallet using etherjs
 const wallet = ethers.Wallet.createRandom();
@@ -37,3 +38,19 @@ for (let i = 0; i < 10; i++) {
 }
 
 //---------------------------------------------------------------------------------
+
+// we can create wallet from private  key also using ethers.Wallet() will also called as signer. which kind of wallet itself
+
+const newWallet = new ethers.Wallet("your prive key");
+console.log(newWallet.address, "address");
+
+// lets sign the message that are going to broadcast in blockchain and then verify it by getting its public address
+
+const signedMsg = await newWallet.signMessage("hi my name is Deepak"); // sign message
+
+const signerAddress = ethers.utils.verifyMessage(
+  "hi my name is Deepak",
+  signedMsg
+); // verify by getting signer public address
+
+console.log("signerAddress", signerAddress);

@@ -1,4 +1,6 @@
 import { ethers } from "ethers";
+
+
 let url = "http://localhost:8545";
 const provider = new ethers.JsonRpcProvider(url);
 
