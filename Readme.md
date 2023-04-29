@@ -24,8 +24,7 @@ The code demonstrates the following functionality:
 - Getting the balance of an Ethereum address in wei using `provider.getBalance()`
 - Formatting an Ethereum balance in ether using `ethers.formatEther()`
 - Parsing an Ethereum balance in ether to wei using `ethers.parseEther()`
-- Comparing Ethereum balances using basic JavaScript comparison operators
-- Adding to an Ethereum balance using `ethers.BigNumber.add()`
+
 
 ## Example
 
