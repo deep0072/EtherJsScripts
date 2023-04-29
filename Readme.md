@@ -114,6 +114,67 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-## Contributing
+# Signers and Providers in Ether.js
 
-If you would like to contribute to this repository, please
+When working with the Ethereum network using Ether.js, two important concepts to understand are **signers** and **providers**.
+
+## Providers
+
+A `provider` in Ether.js is an object that connects to the Ethereum network and provides access to various services, such as querying blockchain data and submitting transactions. Providers are used to interact with the Ethereum blockchain and obtain information about its current state.
+
+There are several types of providers in Ether.js:
+
+- `JsonRpcProvider`: This provider connects to an Ethereum node using the JSON-RPC API.
+- `InfuraProvider`: This provider connects to the Infura service to access the Ethereum network.
+- `EtherscanProvider`: This provider connects to the Etherscan API to access the Ethereum network.
+
+You can also create your own custom provider if necessary.
+
+To create a provider in Ether.js, you can use the `JsonRpcProvider` class as follows:
+
+```javascript
+import { ethers } from "ethers";
+
+const provider = new ethers.providers.JsonRpcProvider(
+  "https://mainnet.infura.io/v3/YOUR-PROJECT-ID"
+);
+```
+
+Here, we are creating a new `JsonRpcProvider` object that connects to the Ethereum mainnet using the Infura service. You will need to replace `YOUR-PROJECT-ID` with your own Infura project ID.
+
+## Signers
+
+A `signer` in Ether.js is an object that has the ability to sign Ethereum transactions and messages with its private key. A signer is typically associated with an Ethereum account and can be used to authorize and send transactions on behalf of that account.
+
+There are several types of signers in Ether.js:
+
+- `Wallet`: This signer is associated with an Ethereum account and its private key. You can use this signer to create and sign transactions on behalf of that account.
+- `JsonRpcSigner`: This signer uses the JSON-RPC API to sign transactions and messages.
+
+To create a signer in Ether.js, you can use the `Wallet` class as follows:
+
+```javascript
+import { ethers } from "ethers";
+
+const privateKey = "YOUR-PRIVATE-KEY";
+const wallet = new ethers.Wallet(privateKey);
+```
+
+Here, we are creating a new `Wallet` object that is associated with an Ethereum account and its private key. You will need to replace `YOUR-PRIVATE-KEY` with your own private key.
+
+Once you have a signer object, you can use it to sign transactions and messages as follows:
+
+```javascript
+const tx = {
+  to: "0x...",
+  value: ethers.utils.parseEther("1.0"),
+};
+
+const signedTx = await wallet.signTransaction(tx);
+```
+
+Here, we are signing a transaction that sends 1 ETH to an Ethereum address. We are using the `signTransaction` method of the `Wallet` object to sign the transaction with its private key.
+
+## Conclusion
+
+In summary, signers and providers are essential components of Ether.js that enable developers to interact with the Ethereum network and sign transactions with private keys. By understanding these concepts, you can build powerful decentralized applications that take advantage of the full capabilities of the Ethereum blockchain.
