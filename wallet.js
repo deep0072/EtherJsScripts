@@ -1,5 +1,4 @@
 import { ethers } from "ethers";
-import "dotenv/config";
 
 // create wallet using etherjs
 const wallet = ethers.Wallet.createRandom();
@@ -54,3 +53,10 @@ const signerAddress = ethers.utils.verifyMessage(
 ); // verify by getting signer public address
 
 console.log("signerAddress", signerAddress);
+
+/*
+
+now lets request some testnet from sepolia using ether js and transferred to our address
+
+
+*/
