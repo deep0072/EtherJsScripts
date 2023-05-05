@@ -175,6 +175,8 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
+<br>
+
 ### To send DAI token from one Ethereum address to another using Ether.js, you can follow these steps:
 
 1. Connect to a JSON-RPC provider: Use `ethers.providers.JsonRpcProvider()` method to connect to a JSON-RPC provider by providing its URL. For example, `const provider = new ethers.providers.JsonRpcProvider(url);`.
