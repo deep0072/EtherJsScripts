@@ -174,3 +174,23 @@ for (let i = 0; i < 10; i++) {
   console.log(`privateKey ${i}`, myWallet.privateKey);
 }
 ```
+
+### To send DAI token from one Ethereum address to another using Ether.js, you can follow these steps:
+
+1. Connect to a JSON-RPC provider: Use `ethers.providers.JsonRpcProvider()` method to connect to a JSON-RPC provider by providing its URL. For example, `const provider = new ethers.providers.JsonRpcProvider(url);`.
+
+2. Impersonate the sender's account: Use `provider.send()` method to impersonate the sender's account on the network. This is required to send transactions from the account. For example, `await provider.send("anvil_impersonateAccount", [address]);`.
+
+3. Get the signer object: Use `provider.getSigner()` method to obtain a signer object for the sender's account. The signer object is used to sign transactions on behalf of the account. For example, `const signer = provider.getSigner(address);`.
+
+4. Get the contract instance: Use `ethers.Contract()` method to obtain an instance of the DAI token contract by providing its contract address and ABI. For example, `const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);`.
+
+5. Convert the DAI amount to Wei: Use `ethers.utils.parseUnits()` method to convert the DAI amount to Wei, which is the smallest unit of the token. For example, `const daiAmount = ethers.utils.parseUnits(amount, 18);`.
+
+6. Check the sender's DAI balance: Use the `balanceOf()` method of the DAI contract instance to check the balance of DAI tokens in the sender's account. For example, `await daiContract.balanceOf(address)`.
+
+7. Transfer the DAI tokens: Use the `transfer()` method of the DAI contract instance to transfer the DAI tokens from the sender's account to the recipient's account. For example, `await daiWithSigner.transfer(recipeint, daiAmount);`.
+
+8. Check the updated DAI balances: Use the `balanceOf()` method of the DAI contract instance again to check the updated DAI balances of both the sender and recipient accounts. For example, `await daiContract.balanceOf(address)` and `await daiContract.balanceOf(recipeint)`.
+
+By following these steps, you can send DAI token from one Ethereum address to another using Ether.js.
